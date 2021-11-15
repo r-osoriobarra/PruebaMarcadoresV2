@@ -1,13 +1,11 @@
 class CategoriesController < ApplicationController
 
-    def index
-
-            @q = params[:q]
-            if @q
-                @categories = Category.where(:name => @q)
-            else
-                @categories = Category.all
-            end
+    def index  
+        categories = "COALESCE(name, '') LIKE '%'"
+        unless params[:q].nil?
+            categories = "COALESCE(name, '') LIKE '%" + params[:q] + "%'"
+        end
+        @categories = Category.where(categories)
     end
 
     def show

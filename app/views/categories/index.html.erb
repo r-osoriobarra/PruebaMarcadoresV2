@@ -3,15 +3,12 @@
     <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
     </svg></h1>
 
-    <div class="mt-4">
-        <form class="form-inline mb-5">
-          <%= form_with(url:categories_path, method: :get, local: :true, class: 'form-inline') do %>
-        <%= text_field_tag :q, "", class: 'form-control mr-sm-1' %>
-        <%= submit_tag( "Buscar", Class: 'btn btn-outline-success my-1 my-sm-0 ' )%>
+    <div class="my-4">
+        <%= form_with(url:"", method: :get, local: :true, class: 'form-inline') do %>
+            <%= text_field_tag :q, "", class: 'form-control mr-sm-1' %>
+            <%= submit_tag( "Buscar por categoria", Class: 'btn btn-outline-success my-1 my-sm-0 ' )%>
         <%end%>
-        </form>
     </div>
-    
 
     <table class="table  ">
         <thead class="thead-dark">
@@ -29,7 +26,13 @@
                     <td><%= c.id %></td>
                     <td><%= c.name %></td>
                     <td><%= c.public_state %></td>
-                     <td><%= c.sub_categories.pluck(:name).join(", ") %></td>
+                    <td>
+                        <ul>
+                            <% c.sub_categories.each do |sub|%>
+                                <li><%= sub.name %></li>
+                            <% end %>
+                        </ul>
+                    </td>
                     <td><%= link_to  'Ver', category_path(c), class:"btn btn-primary"%></td>
                     <td><%= link_to  'Editar', edit_category_path(c), class:"btn btn-warning" %></td>
                     <td><%= link_to  'Borrar', category_path(c), class:"btn btn-danger", method: :delete, data: { confirm: 'Estas seguro que quieres borrar esta categoria?'} %></td>
