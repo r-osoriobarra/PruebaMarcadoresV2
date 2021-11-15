@@ -29,7 +29,7 @@
                     <td><%= c.id %></td>
                     <td><%= c.name %></td>
                     <td><%= c.public_state %></td>
-                     <td><%= c.sub_categories.pluck(:name) %></td>
+                     <td><%= c.sub_categories.pluck(:name).join(", ") %></td>
                     <td><%= link_to  'Ver', category_path(c), class:"btn btn-primary"%></td>
                     <td><%= link_to  'Editar', edit_category_path(c), class:"btn btn-warning" %></td>
                     <td><%= link_to  'Borrar', category_path(c), class:"btn btn-danger", method: :delete, data: { confirm: 'Estas seguro que quieres borrar esta categoria?'} %></td>
