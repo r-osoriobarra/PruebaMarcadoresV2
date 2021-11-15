@@ -52,7 +52,7 @@ persona puede agregar o quitar elementos de una lista/categoría.
 
 ​
 
-### Pre-requisitos ��
+### Pre-requisitos 🚀
 
 ​
 
@@ -62,13 +62,13 @@ persona puede agregar o quitar elementos de una lista/categoría.
 
 ​
 
-## modelo fisico ��
+## modelo fisico 📋
 
 ​![Modelo conceptual](https://github.com/r-osoriobarra/models_dl/blob/main/models/marcadores.jpg)
 
 ​
 
-## Construido con ��️
+## Construido con 🛠️
 
 ​
 
@@ -80,7 +80,7 @@ persona puede agregar o quitar elementos de una lista/categoría.
 
 ​
 
-## gemas instalada ��
+## gemas instalada 📌
 
 * gem 'bootstrap', '~> 4.3.1'
 
@@ -92,7 +92,7 @@ persona puede agregar o quitar elementos de una lista/categoría.
 
 ​
 
-##  Acceder al Endpoint ��️
+##  Acceder al Endpoint 📌
 
 ​Para ingresar a los datos de la api , se debe ingresar : /api/v1/category/:id
 
@@ -157,7 +157,7 @@ Por ejemplo al consultar por la categoria 2:
 ```
 
 
-##  Ejempo de Orden de Datos��️
+##  Ejempo de Orden de Datos📌
 
 ​
 
